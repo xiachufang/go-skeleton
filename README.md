@@ -9,4 +9,5 @@ After generate new repo, update the following variables:
 
 
 ref:
-    - [Standard Go Project Layout](https://github.com/golang-standards/project-layout)
+
+- [Standard Go Project Layout](https://github.com/golang-standards/project-layout)
