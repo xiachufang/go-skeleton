@@ -18,9 +18,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: lint
-        uses: golangci/golangci-lint-action@v1
+        uses: golangci/golangci-lint-action@v2
         with:
-          version: v1.27
+          version: v1.35
 
   errcheck:
     name: Errcheck

@@ -71,7 +71,7 @@ linters:
     - gocritic
     - gocyclo
     - gofmt
-    - goimports
+  #  - goimports
     - golint
     - gomnd
     - goprintffuncname
@@ -112,6 +112,9 @@ issues:
     - path: _test\.go
       linters:
         - gomnd
+        - goconst
+        - gosec
+        - gomnd
     # https://github.com/go-critic/go-critic/issues/926
     - linters:
         - gocritic
@@ -125,4 +128,4 @@ run:
 # golangci.com configuration
 # https://github.com/golangci/golangci/wiki/Configuration
 service:
-  golangci-lint-version: 1.28.1 # use the fixed version to not introduce new linters unexpectedly
+  golangci-lint-version: 1.35.2 # use the fixed version to not introduce new linters unexpectedly
