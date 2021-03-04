@@ -31,19 +31,14 @@ jobs:
           SAFE_ACTOR=$(echo $ACTOR | sed 's/[- ]/_/g' | sed 's/[^a-zA-Z0-9_]//g' | tr '[:upper:]' '[:lower:]')
 
           # Replace placeholders
-          sed -i "" .github/repo/*
-          sed -i "s/%ACTOR%/$ACTOR/g" .github/repo/*
-          sed -i "s/%REPOSITORY%/${GITHUB_REPOSITORY/\//\\/}/g" .github/repo/*
-
-          # Replace placeholders
           find . -type f -not -path '*/.git/*' -exec sed -i "s/%NAME%/$NAME/g" {} +
           find . -type f -not -path '*/.git/*' -exec sed -i "s/%ACTOR%/$ACTOR/g" {} +
           find . -type f -not -path '*/.git/*' -exec sed -i "s/%SAFE_NAME%/$SAFE_NAME/g" {} +
-          find . -type f -not -path '*/.git/*' -exec sed -i "s/%REPOSITORY%/$REPOSITORY/g" {} +
+          find . -type f -not -path '*/.git/*' -exec sed -i "s/%REPOSITORY%/${GITHUB_REPOSITORY}/g" {} +
 
           # Move content
-          echo .github/repo/README.md > README.md
-          echo .github/repo/LICENSE.md > LICENSE
+          cat .github/repo/README.md > README.md
+          cat .github/repo/LICENSE.md > LICENSE
 
           # Cleanup
           rm -rf \
