@@ -1,6 +1,10 @@
-## %NAME%
+# go-skeleton
 
-![Test](https://github.com/%REPO%/workflows/Test/badge.svg) ![Lint](https://github.com/%REPO%/workflows/Lint/badge.svg)
+Go project template
+
+## Getting started
+
+click the <kbd>Use this template</kbd> button and wait a few minutes for init project.
 
 ---
 
