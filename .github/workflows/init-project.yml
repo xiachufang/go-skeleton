@@ -26,7 +26,6 @@ jobs:
         run: |
           # Prepare variables
           NAME="${GITHUB_REPOSITORY##*/}"
-          ADDR="${GITHUB_REPOSITORY}"
           ACTOR=$(echo $GITHUB_ACTOR | tr '[:upper:]' '[:lower:]')
           SAFE_NAME=$(echo $NAME | sed 's/[- ]/_/g' | sed 's/[^a-zA-Z0-9_]//g' | tr '[:upper:]' '[:lower:]')
           SAFE_ACTOR=$(echo $ACTOR | sed 's/[- ]/_/g' | sed 's/[^a-zA-Z0-9_]//g' | tr '[:upper:]' '[:lower:]')
@@ -35,7 +34,7 @@ jobs:
           find . -type f -not -path '*/.git/*' -exec sed -i "s/%NAME%/$NAME/g" {} +
           find . -type f -not -path '*/.git/*' -exec sed -i "s/%ACTOR%/$ACTOR/g" {} +
           find . -type f -not -path '*/.git/*' -exec sed -i "s/%SAFE_NAME%/$SAFE_NAME/g" {} +
-          find . -type f -not -path '*/.git/*' -exec sed -i "s/%REPOSITORY%/$ADDR/g" {} +
+          find . -type f -not -path '*/.git/*' -exec sed -i "s/%REPOSITORY%/${GITHUB_REPOSITORY/\//\\/}/g" {} +
 
           # Move content
           cat .github/repo/README.md > README.md
