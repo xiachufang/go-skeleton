@@ -1,3 +1,3 @@
-module github.com/$REPOSITORY
+module github.com/%REPOSITORY%
 
 go 1.14
