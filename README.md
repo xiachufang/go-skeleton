@@ -1,8 +1,6 @@
-After generate new repo, update the following variables:
+## %NAME%
 
-- `.golangci.yml`: `{project-name}`
-- `Dockerfile`: `{your-port}`
-- `go.mod`: `{project-name}`
+![Test](https://github.com/%REPO%/workflows/Test/badge.svg) ![Lint](https://github.com/%REPO%/workflows/Lint/badge.svg)
 
 ---
 

@@ -1,3 +1,3 @@
-module github.com/xiachufang/{project-name}
+module github.com/$REPOSITORY
 
 go 1.14

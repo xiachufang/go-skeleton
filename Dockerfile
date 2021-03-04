@@ -14,7 +14,7 @@ FROM scratch
 WORKDIR /opt/code
 COPY --from=builder /app/server /opt/code/
 
-EXPOSE {your-port}
+EXPOSE 800
 
 HEALTHCHECK --interval=30s --timeout=1s CMD ["/opt/code/server", "healthcheck"]
 
