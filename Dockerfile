@@ -12,6 +12,7 @@ RUN CGO_ENABLED=0 make build
 FROM scratch
 
 WORKDIR /opt/code
+COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
 COPY --from=builder /app/server /opt/code/
 
 EXPOSE 800
